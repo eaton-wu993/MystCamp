@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystical Camp - Embark on a Magical Adventure</title>
+    <link rel="canonical" href="https://mystcamp.online" />
+    <meta name="description" content="Mystical Camp: Survive and thrive in a magical world filled with mysterious creatures and enchanted forests. Play now for free!">
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-color: #007AFF; /* 苹果蓝色 */
+            --secondary-color: #34AADC; /* 苹果浅蓝色 */
+            --accent-color: #5AC8FA; /* 苹果天蓝色 */
+            --background-color: #F7F7F7; /* 苹果背景色 */
+            --text-color: #1F1F21; /* 苹果文本色 */
+            --light-text: #8E8E93; /* 苹果浅灰色文本 */
+            --success-color: #4CD964; /* 苹果绿色 */
+            --warning-color: #FF9500; /* 苹果橙色 */
+            --danger-color: #FF3B30; /* 苹果红色 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        } /* 重置所有元素的默认样式并使用苹果系统字体 */
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        } /* 设置页面背景色和文本颜色 */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        } /* 创建居中容器并添加左右内边距 */
+
+        /* 导航栏样式 */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        } /* 固定顶部导航栏并添加阴影效果 */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        } /* 导航栏内部元素排列 */
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        } /* 网站标志样式 */
+
+        /* 主要内容样式 */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        } /* 主横幅区域样式 */
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        } /* 主标题样式 */
+
+        .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            color: var(--light-text);
+        } /* 简介标语样式 */
+
+        /* 游戏区域样式 */
+        .game-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 40px;
+        } /* 游戏容器样式 */
+
+        .game-frame {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+        } /* 游戏iframe样式 */
+        
+        @media (max-width: 768px) {
+            .game-frame {
+                height: 450px;
+            }
+        } /* 在小屏幕上减小游戏框架高度 */
+
+        /* 游戏详情区域样式 */
+        .game-info {
+            padding: 40px 0;
+        } /* 游戏信息区域样式 */
+
+        h2 {
+            font-size: 1.75rem;
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+        } /* 二级标题样式 */
+
+        p {
+            margin-bottom: 20px;
+        } /* 段落样式 */
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        } /* 特性区块样式 */
+
+        @media (max-width: 768px) {
+            .feature {
+                flex-direction: column;
+            }
+        } /* 小屏幕上特性区块改为垂直排列 */
+
+        .feature-icon {
+            background-color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.5rem;
+        } /* 特性图标样式 */
+
+        .feature-content {
+            flex: 1;
+        } /* 特性内容样式 */
+
+        /* 页脚样式 */
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        } /* 页脚样式 */
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        } /* 页脚内容排列 */
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        } /* 页脚列样式 */
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        } /* 页脚标题样式 */
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        } /* 版权信息样式 */
+
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        } /* 按钮基本样式 */
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        } /* 按钮悬停效果 */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Mystical Camp</div>
+                <a href="#play" class="btn">Play Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Mystical Camp</h1>
+                <p class="tagline">Survive, explore, and thrive in a magical world filled with wonder and danger.</p>
+            </div>
+        </section>
+
+        <section id="play" class="container">
+            <div class="game-container">
+                <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" class="game-frame" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="game-info container">
+            <h2>About Mystical Camp</h2>
+            <p>Mystical Camp is an enchanting survival adventure game that takes you to a magical forest where you must establish your camp, gather resources, and defend against mysterious creatures. Build, craft, and explore as you uncover the secrets of this mystical world.</p>
+
+            <h2>Game Features</h2>
+            <div class="feature">
+                <div class="feature-icon">🏕️</div>
+                <div class="feature-content">
+                    <h3>Build Your Camp</h3>
+                    <p>Establish and upgrade your camp with various structures, defenses, and magical enhancements. Create a safe haven in the midst of a dangerous but beautiful forest.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⚔️</div>
+                <div class="feature-content">
+                    <h3>Battle Monsters</h3>
+                    <p>Defend yourself against a variety of magical creatures and monsters. Develop your combat skills and craft powerful weapons to survive increasingly difficult encounters.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌳</div>
+                <div class="feature-content">
+                    <h3>Explore the Forest</h3>
+                    <p>Venture deeper into the mystical forest to discover rare resources, hidden treasures, and ancient ruins. Each area presents new challenges and rewards.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <div class="feature-content">
+                    <h3>Magical Abilities</h3>
+                    <p>Develop and master magical abilities that help you survive and thrive. Harness the power of the elements and mystical forces to overcome obstacles.</p>
+                </div>
+            </div>
+
+            <h2>How to Play</h2>
+            <p>Use the WASD keys or arrow keys to move your character. Click or use space to interact with objects and attack monsters. Collect resources by approaching them and pressing the appropriate key. Build structures by accessing the crafting menu with Tab or E. Manage your inventory using the I key.</p>
+
+            <h2>Tips for Beginners</h2>
+            <p>Start by gathering basic resources like wood and stone near your camp. Build a simple shelter before nightfall when monsters become more active. Craft a basic weapon as soon as possible to defend yourself. Always keep some food and healing items in your inventory for emergencies. Explore gradually, expanding your territory as you become stronger.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mystical Camp</h3>
+                    <p>A magical survival adventure where you can build, craft, and battle in an enchanted forest.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <p><a href="#play" style="color: var(--accent-color); text-decoration: none;">Play Game</a></p>
+                    <p><a href="#" style="color: var(--accent-color); text-decoration: none;">Game Guide</a></p>
+                    <p><a href="#" style="color: var(--accent-color); text-decoration: none;">Community</a></p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p>Email: info@mystcamp.online</p>
+                    <p>Follow us on social media for updates and events!</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Mystical Camp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
